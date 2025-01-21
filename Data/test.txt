@@ -1,1 +1,35 @@
 
+margies-travel
+
+
+Day --3
+Subscription: The Azure subscription in which you provisioned your storage account.
+Blob storage account: The storage account you created previously.
+Blob container: margies-travel
+Blob folder: Leave blank
+Enable deletion tracking: Unselected
+Authenticate using managed identity: Unselected
+
+
+On the Vectorize your text page, select the following settings:
+Kind: Azure OpenAI
+Subscription: The Azure subscription in which you provisioned your Azure OpenAI service.
+Azure OpenAI Service: Your Azure OpenAI Service resource
+Model deployment: text-embedding-ada-002
+Authentication type: API key
+I acknowledge that connecting to an Azure OpenAI service will incur additional costs to my account: Selected
+
+
+On the next page, do not select the option to vectorize images or extract data with AI skills.
+On the next page, enable semantic ranking and schedule the indexer to run once.
+On the final page, set the Objects name prefix to margies-index and then create the index.
+
+
+
+https://github.com/MicrosoftLearning/mslearn-openai
+
+https://learn.microsoft.com/en-gb/training/modules/use-own-data-azure-openai/5-exercise
+text-embedding-ada-002
+gpt-35-turbo-16k
+
+Import and vectorize data.

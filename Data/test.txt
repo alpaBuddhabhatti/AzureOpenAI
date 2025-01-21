@@ -1,4 +1,18 @@
 
+Can you please generate Driving licnece number based on the diagram ? Also can you please generate sample data for 5 user? And write login in Store procedure?
+
+Can you please simplified the diagram? 
+
+Can you please double check the diagram having correct encoding based on UK driving licence?
+
+
+EXEC DecodeDrivingLicenceNumber1 'Budd9051011Al90001'; 
+
+EXEC GenerateDrivingLicenceNumber 'Alpa', 'Budd', '2001-01-01', 'F';
+
+
+Azure SQL server
+Micsofot fabric 
 margies-travel
 
 

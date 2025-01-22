@@ -83,7 +83,7 @@ Open your web browser and navigate to the URL provided by Streamlit (usually htt
 
 ## Troubleshooting
 
-- **ODBC Driver Error**: Ensure you have the ODBC Driver 17 for SQL Server installed. You can download it from the Microsoft website.
+- **ODBC Driver Error**: Ensure you have the ODBC Driver 18 for SQL Server installed. You can download it from the Microsoft website.
 - **Environment Activation**: If you have trouble activating the virtual environment, ensure you are using the correct command for your operating system.
 
 ## Additional Resources

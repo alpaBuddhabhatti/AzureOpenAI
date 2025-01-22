@@ -1,0 +1,8 @@
+numpy
+pandas
+streamlit
+openai
+#dotenv
+python-dotenv
+pyodbc
+#python -m streamlit run main_app.py    

@@ -1,0 +1,188 @@
+TextToSQL Project Documentation
+Overview
+The TextToSQL project aims to convert natural language text into SQL queries. 
+This can be useful for users who are not familiar with SQL but need to interact with databases. 
+The project leverages Azure OpenAI to generate SQL queries from natural language input and provides a user interface using Streamlit.
+
+Folder Structure
+
+## Project Structure
+TextToSQL/
+├── main_app.py
+├── main_app_streamlit.py
+├── prompts/
+│   └── prompts.py
+├── sql_db.py
+├── azure_openai.py
+├── requirements.txt
+└── README.txt
+
+File Descriptions
+1. main_app.py
+Purpose:
+Sets up the database connection and formats the system message for generating SQL queries.
+Can be used for automated tasks or testing without user interaction.
+
+Key Functions:
+query_database(query): Runs a SQL query and returns the results in a dataframe.
+Sets up the database connection and schema representation.
+
+Usage:
+This script can be run independently for testing or background tasks.
+
+2. main_app_streamlit.py
+Purpose:
+Provides a user interface using Streamlit for generating SQL queries from natural language input and displaying the results.
+
+Key Functions:
+query_database(query, conn): Runs a SQL query and returns the results in a dataframe.
+Sets up the Streamlit app interface, takes user input, generates SQL queries using Azure OpenAI,
+ and displays the results.
+
+Usage:
+Run this script to start the Streamlit application:
+streamlit run main_app_streamlit.py
+
+3. prompts.py
+Purpose:
+Contains the system message template used to instruct the AI assistant on how to generate SQL 
+queries.
+
+Key Components:
+SYSTEM_MESSAGE: A template that includes placeholders for the database schema and specifies the
+ format of the output.
+
+Usage:
+This file is imported by other scripts to format the system message for the AI assistant.
+
+4. sql_db.py
+Purpose:
+Handles database connections and schema representation.
+
+Key Functions:
+create_connection(): Establishes a connection to the Azure SQL Database.
+query_database(query): Runs a SQL query and returns the results in a dataframe.
+get_schema_representation(): Retrieves the database schema in a JSON-like format.
+
+Usage:
+This file is imported by other scripts to manage database connections and retrieve schema 
+information.
+
+5. azure_openai.py
+Purpose:
+Contains functions to interact with Azure OpenAI for generating SQL queries.
+
+Key Functions:
+get_completion_from_messages(system_message, user_message): Gets a completion from Azure OpenAI based on system and user messages.
+
+Usage:
+This file is imported by other scripts to generate SQL queries using Azure OpenAI.
+
+6. requirements.txt
+Purpose:
+Lists the required Python packages for the project.
+
+Usage:
+Install the dependencies using: pip install -r requirements.txt
+
+7. README.txt
+Purpose:
+Provides an overview of the project, installation instructions, setup instructions, and troubleshooting tips.
+
+Usage:
+Read this file to understand how to set up and use the project.
+
+Setup Instructions:
+Prerequisites:
+Python: Ensure you have Python 3.7 or later installed. You can download it from python.org.
+pip: Ensure you have pip installed. It usually comes with Python, but you can upgrade it using:
+
+python -m pip install --upgrade pip
+
+Step-by-Step Setup:
+
+1. Create a Virtual Environment:python -m venv myenv
+
+
+2. Activate the virtual environment:
+
+
+.\myenv\Scripts\Activate
+
+3. Install Dependencies:
+pip install -r requirements.txt
+
+4. Set Up Environment Variables: 
+Create a .env file in the root directory of the project and add your Azure OpenAI and database credentials:
+
+AZURE_OPENAI_KEY=your_openai_key
+AZURE_OPENAI_ENDPOINT=your_openai_endpoint
+DATABASE_SERVER=your_database_server
+DATABASE_NAME=your_database_name
+DATABASE_USERNAME=your_database_username
+DATABASE_PASSWORD=your_database_password
+
+5. Run the Streamlit Application:
+streamlit run main_app_streamlit.py
+
+6. Verify the Setup: Open your web browser and navigate to the URL provided by Streamlit 
+(usually http://localhost:8501). 
+
+You should see the Streamlit app running.
+
+Troubleshooting
+ODBC Driver Error: Ensure you have the ODBC Driver 18 for SQL Server installed. 
+
+you can varify it by command:
+Get-OdbcDriver -Name "ODBC Driver 18 for SQL Server"
+
+You can download it from the Microsoft website.
+Environment Activation: If you have trouble activating the virtual environment, ensure you are using the correct command for your operating system.
+
+python -m venv venv 
+
+.\myenv\Scripts\Activate  
+
+
+pip install -r requirements.txt  
+
+python --version
+
+########  if issues 
+#########    pip  install openai --upgrade  
+##########   pip install --upgrade setuptools    
+##########    pip install --upgrade pip setuptools wheel  
+
+
+Running App:
+python  SQLDB_Test_v1.py   ###testing your SQL connection
+
+python -m streamlit run main_app_streamlit.py  ##Application
+
+
+Also can modify prompt :
+
+You must always output your answer in JSON format with the following key-value pairs:
+- "query": the SQL query that you generated
+- "error": an error message if the query is invalid, or null if the query is valid
+
+You can generate queries that include:
+- JOINs: Combining rows from two or more tables based on a related column.
+- WHERE clauses: Filtering records based on specific conditions.
+- Aggregations: Performing calculations on multiple rows of a table (e.g., SUM, AVG, COUNT).
+- Subqueries: Nested queries within a main query.
+- CTEs (Common Table Expressions): Temporary result sets that can be referenced within a SELECT, INSERT, UPDATE, or DELETE statement.
+- GROUP BY: Grouping rows that have the same values in specified columns into summary rows.
+- HAVING: Filtering groups based on a condition.
+"""
+
+ 
+
+
+ 
+
+ 
+
+       
+ 
+

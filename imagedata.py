@@ -6,13 +6,13 @@ from openai import AzureOpenAI
 
 # Initialize Azure OpenAI client with key-based authentication
 client = AzureOpenAI(
-    azure_endpoint = "https://azureopenai24demo.openai.azure.com/",
-    api_key = "7c15f7bb4139435bbefa4b8e155a1622",
-    api_version = "2024-05-01-preview",
+    azure_endpoint = "https://USEYOURAZUREOPENAI.openai.azure.com/",
+    api_key = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    api_version = "XXXXXXXXXXXXXXXXXX",
 )
   
 completion = client.chat.completions.create(
-    model="gpt-40",
+    model="gpt-40", # This should be your model name
 
     messages=[
         {

@@ -8,8 +8,8 @@ load_dotenv()
 
 
 client = AzureOpenAI(
-  azure_endpoint = "https://azureopenai24demo.openai.azure.com/", 
-  api_key="7c15f7bb4139435bbefa4b8e155a1622",
+  azure_endpoint = "https://YOURAZUREOPENAI.openai.azure.com/", 
+  api_key="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
   api_version="2024-05-01-preview"
 )
 
